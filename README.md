@@ -23,10 +23,11 @@ On another shell environemnt run python client.
 It has two options -
 
 1. Run the Python client which gives the error 104 and 107 issue. Which is the
-   issue I'm getting right now on the production machine.
+issue I'm getting right now on the production machine.
 
 2. Another implementation of the Python client which fixes the issue and read
-   the socket data without causing socket error 104 and 107
+the socket data without causing socket error 104 and 107
+
 
     $ python tcp_server.py  # Simulate the tcp client with socket problem.
 
