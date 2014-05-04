@@ -29,15 +29,18 @@ issue I'm getting right now on the production machine.
 the socket data without causing socket error 104 and 107
 
 
+        
+Bellow command will crash after a while since the server closes the socket on its
+side due to the kernel sending buffer is full on the server side.
+
     $ python tcp_server.py  # Simulate the tcp client with socket problem.
 
-This will crash after while since the server closes the socket on its
-side due to the kernel sending buffer is full on the server side.
+
+Bellow command will read the socket data in non-blocking mode and read entire
+data from the socket till it throws EAGAIN exception.
 
     $ python tcp_server.py -c # This client has the option to fix that issue.
 
-This will read the socket data in non-blocking mode and read entire
-data from the socket till it throws EAGAIN exception.
 
 This time the client won't throw any excetion and the server and client
 work smoothly. So finally I got the protype to fix the actual production
